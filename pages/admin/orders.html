@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin — Orders</title>
+  <link rel="icon" href="https://res.cloudinary.com/djmbuuz28/image/upload/v1761108817/logo.png/logo.jpg" type="image/png">
+  <link rel="shortcut icon" href="https://res.cloudinary.com/djmbuuz28/image/upload/v1761108817/logo.png" type="image/png">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+  <style>
+    
+  </style>
+</head>
+<body>
+
+  <div class="admin-wrap">
+    <h1>Admin Panel</h1>
+    <div style="display:flex;gap:2rem;align-items:flex-start;">
+      <nav style="min-width:200px;">
+        <ul id="admin-nav" style="list-style:none;padding:0;margin:0;">
+          <li><button class="btn" id="nav-btn" onclick="showTab('sales')">Sales Tracking</button></li>
+          <li><button class="btn" id="nav-btn" onclick="showTab('pending')">Pending Orders</button></li>
+          <li><button class="btn" id="nav-btn" onclick="showTab('accepted')">Accepted Orders</button></li>
+          <li><button class="btn" id="nav-btn" onclick="showTab('billing')">Billing</button></li>
+          <li><button class="btn" id="nav-btn" onclick="showTab('delivered')">Delivered Orders</button></li>
+        </ul>
+      </nav>
+      <main style="flex:1;">
+        <div id="status" class="muted">Loading…</div>
+        <section id="tab-sales" class="admin-tab" style="display:none;">
+          <div id="sales-panel" style="margin:1rem 0;">
+            <h2 style="margin:.25rem 0 .5rem 0">Sales — Overview</h2>
+            <div class="sales-grid">
+              <div class="stat">
+                <div class="label">Today</div>
+                <div id="sales-today" class="value">—</div>
+                <div id="sales-today-count" class="muted small">— sales</div>
+              </div>
+              <div class="stat">
+                <div class="label">This Week</div>
+                <div id="sales-week" class="value">—</div>
+                <div id="sales-week-count" class="muted small">— sales</div>
+              </div>
+              <div class="stat">
+                <div class="label">This Month</div>
+                <div id="sales-month" class="value">—</div>
+                <div id="sales-month-count" class="muted small">— sales</div>
+              </div>
+              <div class="stat">
+                <div class="label">This Year</div>
+                <div id="sales-year" class="value">—</div>
+                <div id="sales-year-count" class="muted small">— sales</div>
+              </div>
+            </div>
+            <div class="chart-area">
+              <div class="chart-card">
+                <h3>Sales (Last 30 days)</h3>
+                <canvas id="sales-chart" aria-label="Sales chart" role="img"></canvas>
+              </div>
+              <div class="chart-card">
+                <h3>Orders (Weekly)</h3>
+                <canvas id="sales-week-chart" aria-label="Weekly orders chart" role="img"></canvas>
+              </div>
+            </div>
+            <div style="margin-top:.5rem"><button class="view-btn" onclick="showSalesDetails()">View sales</button></div>
+            <div id="sales-details" style="margin-top:1rem"></div>
+          </div>
+        </section>
+    <div id="details" style="margin-top:1rem"></div>
+  <section id="tab-pending" class="admin-tab" style="display:none;"></section>
+  <section id="tab-accepted" class="admin-tab" style="display:none;"></section>
+  <section id="tab-billing" class="admin-tab" style="display:none;"></section>
+  <section id="tab-delivered" class="admin-tab" style="display:none;"></section>
+      </main>
+    </div>
+    <p class="muted" style="margin-top:.5rem">Actions: Accept will mark the order as accepted; Delivered will mark it delivered and record the sale; Print opens the bill for printing.</p>
+  </div>
+
+  <script src="/admin/admin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

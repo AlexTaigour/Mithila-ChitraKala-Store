@@ -1,0 +1,94 @@
+<html>
+    <head>
+      <title>Bill - ${escapeHtml(order.orderId)}</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+      <style>
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family:Arial;
+            margin:1rem
+        }
+
+       .bill{
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            border:1px solid #ccc;
+            padding:1rem;
+            border-radius:8px;
+            box-shadow:0 2px 6px rgba(0,0,0,.1)
+        }
+
+        .bill h1{
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align:center;
+            margin-bottom:0;
+        }
+
+        .bill h2{
+            text-align:center;
+            margin-bottom:1rem
+        }
+
+        .bill .address{
+            text-align:center;
+            font-size: 0.9rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .bill h4{
+            text-align:right;
+            margin-top:1rem
+        }
+
+        .detail{
+            display: flex;
+            flex-direction: column;
+            text-align:left;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse
+        }
+
+        th,td{
+            border:1px solid #ccc;
+            padding:.5rem;
+            text-align:left
+        }
+
+      </style>
+    </head>
+    <body>
+<div class="bill">
+        <h1>Mithila ChitraKala Store</h1>
+        <p class="address">Janakpur-13, Nepal</p>
+      <h2>Bill — ORD-1761305076738</h2>
+      <div class="detail">
+      <p><strong>Name:</strong> Alex<br>
+      <strong>Email:</strong> rsha8883@gmail.com<br>
+      <strong>Phone:</strong> 9709173011<br>
+      <strong>Address:</strong> janakpur-13</p>
+      </div>
+      <table>
+        <thead><tr><th>Item</th><th>Qty</th><th>Price</th><th>Line</th></tr></thead>
+        <tbody>
+          ${itemsHtml}
+        </tbody>
+      </table>
+
+      <div class="detail">
+      <h4>Total: रु ${order.total}</h4>
+      <p>Placed: ${new Date(order.createdAt).toLocaleString()}</p>
+      </div>
+</div>
+    </body>
+    </html>

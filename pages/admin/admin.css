@@ -1,0 +1,310 @@
+:root {
+    --primary-red: hsl(0, 68%, 47%);
+    --golden-yellow: hsl(50, 89%, 67%);
+    --shine-gold: linear-gradient(45deg, #FFD700, #ffedb3, #ffdf4f, #ffc14d);
+    --royal-blue: hsl(207, 60%, 48%);
+    --warm-cream: hsl(37, 100%, 96%);
+    --charcoal: hsl(211, 26%, 17%);
+    --terracotta: hsl(0, 65%, 59%);
+    --light-gray: hsl(210, 17%, 98%);
+    --border-light: hsl(213, 27%, 84%);
+    --shadow: hsla(0, 0%, 0%, 0.1);
+    --shadow-hover: hsla(0, 0%, 0%, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--warm-cream);
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.admin-wrap{
+    max-width:1100px;
+    margin:4rem auto;
+    padding:1rem
+}
+
+nav{
+    position: fixed;
+    top:0;
+    left: 0;
+    display: flex;
+    width:100%;
+    background:#fff;
+    border-left:1px solid var(--border-light);
+    padding:1rem;
+    box-shadow:-2px 0 5px var(--shadow-hover);
+    overflow-y:auto
+}
+
+nav ul{
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    list-style:none;
+}
+
+nav ul li{
+    margin-bottom:.5rem
+}
+
+nav ul li #nav-btn{
+    width:100%;
+    padding:.5rem;
+    border:none;
+    border-bottom: #333 1px solid;
+    background:none;
+    text-align:left;
+    font-size:1rem;
+    cursor:pointer;
+    border-radius:4px;
+    transition:background .3s
+}
+
+#nav-btn.active{
+    background: var(--primary-red);
+    color: var(--warm-cream);
+}
+
+#nav-btn:hover{
+   background: var(--primary-red);
+   color: var(--warm-cream);
+}
+
+
+#details{
+    border:1px solid var(--border-light);
+    padding:1rem;
+    border-radius:8px;
+    background:#fff;
+    box-shadow:0 1px 4px var(--shadow-hover)
+}
+
+#details h3{
+    margin-bottom:.5rem
+}
+
+.detail-btn{
+    padding:.4rem .8rem;
+    border:none;
+    border-radius:6px;
+    background:var(--royal-blue);
+    color:#fff;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .3s
+}
+
+ .delivered-btn{
+    padding:.4rem .8rem;
+    border:none;
+    border-radius:6px;
+    background:#ff4646;
+    color:#fff;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .3s
+}
+
+.view-btn{
+    padding:.4rem .8rem;
+    border:none;
+    border-radius:6px;
+    background:var(--primary-red);
+    color:#fff;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .3s
+}
+
+.print-btn{
+    padding:.4rem .8rem;
+    border:none;
+    border-radius:6px;
+    background:var(--golden-yellow);
+    color:#333;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .3s
+}
+
+.print-btn i{
+    margin-right:.4rem;
+    color:#333;
+}
+
+.pending-btn{
+    padding:.4rem .8rem;
+    border:none;
+    border-radius:6px;
+    background:#ffc107;
+    color:#333;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .3s
+}
+
+.accept-btn{
+    padding:.4rem .8rem;
+    border:none;
+    border-radius:6px;
+    background:#17b855;
+    color:#fff;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .3s
+}
+ 
+pre{
+    white-space:pre-wrap;
+    word-wrap:break-word;
+    background:#f8f8f8;
+    padding:.6rem;
+    border-radius:6px
+}
+
+.status{
+    display:inline-block;
+    padding:.25rem .5rem;
+    border-radius:6px;
+    font-weight:600
+}
+
+.status.pending{
+    background:#fff3cd;
+    color:#856404;
+    border:1px solid #ffeeba
+}
+
+.status.accepted{
+    background:#d1ecf1;
+    color:#0c5460;
+    border:1px solid #bee5eb
+}
+
+.status.delivered{
+    background:#d4edda;
+    color:#155724;
+    border:1px solid #c3e6cb
+}
+
+
+table{
+    width:100%;
+    border-collapse:collapse
+}
+
+th,td{
+    padding:.6rem;
+    border:1px solid #e6e6e6;
+    text-align:left
+}
+     
+.muted{
+    color:#666;font-size:.9rem
+}
+
+.actions{
+    display:flex;
+    gap:.5rem;
+}
+
+/* Sales tab styles */
+.sales-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:1rem;
+    margin-bottom:1rem;
+}
+.stat{
+    background:#fff;
+    border:1px solid var(--border-light);
+    padding:1rem;
+    border-radius:8px;
+    box-shadow:0 1px 3px var(--shadow);
+}
+.stat .label{
+    font-size:.9rem;
+    color:#666;
+}
+.stat .value{
+    font-size:1.25rem;
+    font-weight:700;
+    margin-top:.35rem;
+}
+.stat .small{font-size:.85rem;color:#777}
+
+/* Chart area */
+.chart-area{
+    display:flex;
+    gap:1rem;
+    margin:1rem 0 0.75rem 0;
+    align-items:flex-start;
+    flex-wrap:wrap;
+}
+.chart-card{
+    flex:1 1 320px;
+    background:#fff;
+    border:1px solid var(--border-light);
+    padding:.75rem;
+    border-radius:8px;
+    box-shadow:0 1px 4px var(--shadow-hover);
+}
+.chart-card h3{
+    font-size:1rem;
+    margin:0 0 .5rem 0
+}
+
+.chart-card canvas{
+    width:100%;
+    height:180px;
+    display:block
+}
+
+/* Sales details table */
+#sales-details table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:.5rem
+}
+
+#sales-details th,#sales-details td{
+    padding:.5rem;
+    border:1px solid var(--border-light);
+    text-align:left
+}
+
+#sales-details thead th{
+    background:linear-gradient(180deg,#fafafa,#f3f3f3);
+    font-weight:700
+}
+
+#sales-details tbody tr:nth-child(even){
+    background:#fbfbfb
+}
+
+
+
+
+
+@media (max-width:640px){
+    .chart-card canvas{
+        height:140px
+    }
+
+    .admin-wrap{
+        padding:.5rem
+    }
+}

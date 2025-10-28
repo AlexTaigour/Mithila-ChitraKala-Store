@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Mithila Chitrakala</title>
+    <link rel="icon" href="https://res.cloudinary.com/djmbuuz28/image/upload/v1761108817/logo.png" type="image/png">
+    <link rel="shortcut icon" href="https://res.cloudinary.com/djmbuuz28/image/upload/v1761108817/logo.png" type="image/png">
+    <meta name="description" content="Browse our complete collection of authentic Mithila paintings and traditional crafts. Hand-painted artworks by skilled artisans from Madhubani.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="mobile-menu-overlay"></div>
+        <div class="nav-container">
+            <a href="index.html" class="logo" data-testid="link-home">Mithila Chitrakala</a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" data-testid="link-home">Home</a></li>
+                <li><a href="products.html" data-testid="link-products">Products</a></li>
+                <li><a href="index.html#about" data-testid="link-about">About</a></li>
+                <li><a href="#contact" data-testid="link-contact">Contact</a></li>
+            </ul>
+
+            <div class="mobile-menu-toggle" data-testid="button-mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <a href="cart.html" class="cart-icon" data-testid="link-cart">
+                <i class="fa-solid fa-cart-shopping"></i> Cart
+                <span class="cart-count" data-testid="text-cart-count">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Products Page Content -->
+    <main class="products-page">
+        <div class="products-container">
+            <div class="section-header" style="margin-top: 120px;">
+                <h1>Our Complete Collection</h1>
+                <p>Discover the finest selection of authentic Mithila paintings and traditional crafts</p>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="filters-section">
+                <div class="filter-group">
+                    <label for="category-filter">Category:</label>
+                    <select id="category-filter" data-testid="select-category-filter">
+                        <option value="">All Categories</option>
+                        <option value="paintings">Paintings</option>
+                        <option value="crafts">Crafts</option>
+                        <option value="home-decor">Home Decor</option>
+                        <option value="clothings">Clothings</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="sort-filter">Sort by:</label>
+                    <select id="sort-filter" data-testid="select-sort-filter">
+                        <option value="name">Name</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="all-products" data-testid="grid-all-products">
+                <!-- Products will be loaded dynamically -->
+            </div>
+
+            <!-- Loading State -->
+            <div id="loading" class="loading-state" data-testid="text-loading" style="display: none;">
+                <p>Loading products...</p>
+            </div>
+
+            <!-- Empty State -->
+            <div id="empty-state" class="empty-state" data-testid="text-empty-products" style="display: none;">
+                <p>No products found matching your criteria.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Mithila Chitrakala</h3>
+                    <p style="color: #CBD5E0; margin-bottom: 1rem;">Preserving and promoting the ancient art of Mithila painting through authentic handcrafted artworks.</p>
+                    <div style="color: #A0AEC0;">
+                        📍 Pidari, Janakpur, Nepal<br>
+                        📧 info@mithilachitrakala.com<br>
+                        📞 +977 9766115626
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Shop</h3>
+                    <a href="products.html" data-testid="link-footer-products">All Products</a>
+                    <a href="products.html?category=paintings" data-testid="link-footer-paintings">Paintings</a>
+                    <a href="products.html?category=crafts" data-testid="link-footer-crafts">Crafts</a>
+                    <a href="products.html?category=home-decor" data-testid="link-footer-home-decor">Home Decor</a>
+                    <a href="products.html?category=clothings" data-testid="link-footer-home-decor">Clothings</a>
+                    <a href="products.html?category=accessories" data-testid="link-footer-home-decor">Accessories</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <a href="#about" data-testid="link-footer-about">About Us</a>
+                    <a href="#contact" data-testid="link-footer-contact">Contact</a>
+                    <a href="#shipping" data-testid="link-footer-shipping">Shipping Info</a>
+                    <a href="#returns" data-testid="link-footer-returns">Returns</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <a href="#" data-testid="link-footer-instagram">Instagram</a>
+                    <a href="#" data-testid="link-footer-facebook">Facebook</a>
+                    <a href="#" data-testid="link-footer-pinterest">Pinterest</a>
+                    <a href="#" data-testid="link-footer-youtube">YouTube</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mithila Chitrakala. All rights reserved. | <a href="privacy-policy.html" target="_blank">Privacy Policy</a> | <a href="terms-and-conditions.html" target="_blank">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</script>
+</body>
+</html>
