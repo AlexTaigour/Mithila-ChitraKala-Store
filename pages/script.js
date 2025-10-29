@@ -521,7 +521,6 @@ async function handleCheckoutSubmit(e) {
 
         showSuccessMessage(`Order placed successfully! Order ID: ${response.orderId}`);
         clearCart();
-        window.location.href = 'index.html';
 
     } catch (error) {
         showErrorMessage('Failed to place order. Please try again.');
@@ -1260,7 +1259,7 @@ async function loadPartnerStores() {
      const modifier = e.ctrlKey || e.metaKey; // include Cmd on macOS
 
      // F12
-    if (k === 'f12') { e.preventDefault(); return; }
+     if (k === 'f12') { e.preventDefault(); return; }
 
      // Shift+F10 (opens context menu)
      if (e.shiftKey && k === 'f10') { e.preventDefault(); return; }
@@ -1269,9 +1268,9 @@ async function loadPartnerStores() {
      if (k === 'contextmenu' || e.keyCode === 93) { e.preventDefault(); return; }
 
      // Ctrl/Cmd + U (view source), Ctrl/Cmd + S (save)
-    if (modifier && (k === 'u' || k === 's')) { e.preventDefault(); return; }
+     if (modifier && (k === 'u' || k === 's')) { e.preventDefault(); return; }
 
-    // Ctrl/Cmd + Shift + I/J/C (devtools / inspect / console / inspect element)
+     // Ctrl/Cmd + Shift + I/J/C (devtools / inspect / console / inspect element)
      if (modifier && e.shiftKey && (k === 'i' || k === 'j' || k === 'c')) { e.preventDefault(); return; }
 });
 
