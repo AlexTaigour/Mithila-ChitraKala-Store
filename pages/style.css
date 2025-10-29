@@ -1175,6 +1175,7 @@ body::-moz-selection {
     background: var(--charcoal);
     color: white;
     padding: 3rem 0 1rem;
+    margin-bottom: 3.5rem;
 }
 
 .footer-container {
