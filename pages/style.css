@@ -1889,9 +1889,27 @@ body::-moz-selection {
   to { transform: rotate(360deg); }
 }
 
-/* small screens: keep loader centered and compact */
-@media (max-width: 480px) {
-  .site-loader-inner { padding: 16px; min-width: 180px; }
-  .loader-logo { width: 64px; height: 64px; }
-  .loader-text { font-size: 0.95rem; }
+
+@media (max-width: 768px) {
+  .site-loader-inner {
+    width: 80%;
+    background: transparent;
+    padding: 10px 12px;
+    box-shadow: none;
+  }
+
+  .loader-logo {
+    height: auto;
+    width: 70%;
+    padding: 0;
+  }
+
+  .loader-text {
+    font-size: 1rem;
+  }
+
+  .loader-spinner {
+    width: 40px;
+    height: 40px;
+  }
 }
