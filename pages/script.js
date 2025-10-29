@@ -519,7 +519,7 @@ async function handleCheckoutSubmit(e) {
 
         const response = await submitOrder(orderData);
 
-        showSuccessMessage(`Order placed successfully! Order ID: ${response.orderId}`);
+        showSuccessMessage(`Order placed successfully! Order ID: ${response.orderId} <br> Please Copy or Take Screenshot of your Order ID for future reference.`);
         clearCart();
 
     } catch (error) {
