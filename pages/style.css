@@ -79,6 +79,72 @@ body::-moz-selection {
     position: relative;
 }
 
+/* Bottom Navigation */
+.bottom-nav {
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  background: white;
+  width: 99%;
+  height: 60px;
+  transform: translateX(-50%);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  z-index: 1100;
+}
+
+/* Each nav item */
+.bottom-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--primary-red);
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Icon base style */
+.bottom-nav a i {
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Fix the purple circle background */
+.bottom-nav a.active i {
+  background: var(--primary-red);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px var(--primary-red);
+  transform: translateY(-15px);
+  margin-bottom: -10px;
+}
+
+/* Active text color */
+.bottom-nav a.active {
+  color: var(--primary-red);
+  margin-top: -10px;
+}
+
+/* Label text */
+.bottom-nav a span {
+  font-size: 13px;
+}
+
+
 .logo {
     font-family: 'Dancing Script', cursive;
     font-size: 2rem;
@@ -163,89 +229,26 @@ body::-moz-selection {
     font-weight: 600;
 }
 
-/* Hamburger Icon */
-.mobile-menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 0.5rem;
-    z-index: 1200;
-    background: rgb(221, 221, 221);
-    border-radius: 25px;
-}
 
-.mobile-menu-toggle span {
-    width: 22px;
-    height: 3px;
-    background: var(--primary-red);
-    margin: 2px 0;
-    border-radius: 2px;
-    transition: 0.3s;
-}
 
 /* Mobile Navbar Styles */
 @media (max-width: 900px) {
-    .nav-links {
-        position: fixed;
-        top: 16vh;
-        right: -100vw;
-        height: auto;
-        width: 100vw;
-        background: white;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 2rem 2rem 2rem 2rem;
-        box-shadow: -2px 0 12px var(--shadow-hover);
-        z-index: 1050;
-        transition: right 0.3s cubic-bezier(.77,0,.175,1);
-        display: block;
-    }
-    .nav-links.open {
-        right: 0vw;
-        width: 100vw;
-    }
 
-    .nav-links ul {
-        flex-direction: column;
+    .bottom-nav {
+        display: flex;
+    }
+    .nav-links {
+        display: block;
     }
 
     .nav-links li {
+        display: none;
         margin: 1.5rem 0;
     }
 
-    .mobile-menu-toggle {
-        display: flex;
-    }
-    .cart-icon {
-        margin-left: 1rem;
-    }
 }
 
-/* Overlay for mobile menu */
-.mobile-menu-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: hsla(0,0%,0%,0.3);
-    z-index: 1040;
-    transition: opacity 0.3s;
-}
 
-.mobile-menu-overlay.active {
-    display: block;
-    opacity: 1;
-}
-
-/* Hide nav-links on desktop overlay */
-@media (min-width: 901px) {
-    .mobile-menu-overlay {
-        display: none !important;
-    }
-}
 
 /* Hero Section */
 .hero {
@@ -1259,9 +1262,6 @@ body::-moz-selection {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .mobile-menu-toggle {
-        display: flex;
-    }
 
     .hero-content {
         grid-template-columns: 1fr;
@@ -1766,6 +1766,8 @@ body::-moz-selection {
 }
 
 @media (max-width: 768px) {
+
+    
 
     .product-detail{
         padding: 1rem 1rem;
