@@ -519,40 +519,6 @@ async function handleCheckoutSubmit(e) {
 
         const response = await submitOrder(orderData);
 
-        // --- Build WhatsApp Message ---
-        let subtotal = calculateCartTotal();
-        let deliveryCharge
-        let total
-    
-        if (subtotal >= 4000 ){
-        deliveryCharge = 'FREE';
-        total = subtotal ;
-      
-    }
-    else {
-        deliveryCharge = 100;
-        total = subtotal + deliveryCharge;
-    };
-
-        let itemsText = orderData.items.map(item => 
-            `${item.name} (x${item.quantity}) - रु${item.price}`
-        ).join('\n');
-
-        let message = `🛒 New Order!\n\n` +
-                      `👤 Name: ${orderData.name}\n` +
-                      `📧 Email: ${orderData.email}\n` +
-                      `📍 Address: ${orderData.address}\n` +
-                      `📞 Phone: ${orderData.phone}\n\n` +
-                      `🛍️ Items: \n${itemsText}\n\n` +
-                      `🛍️ SubTotal:रु${subtotal}\n\n` +
-                      `🛍️ Delivery:रु${deliveryCharge}\n\n` +
-                      `💰 Total: रु${total}\n` +
-                      `✅ Order ID: ${response.orderId}`;
-
-        // Open WhatsApp with pre-filled message
-        const whatsappURL = `https://wa.me/9766115626?text=${encodeURIComponent(message)}`;
-        window.open(whatsappURL, "_blank");
-
         showSuccessMessage(`Order placed successfully! Order ID: ${response.orderId}`);
         clearCart();
         window.location.href = 'index.html';
@@ -1184,6 +1150,7 @@ function handleNewsletterSubmit(e) {
   });
 })();
 
+
 // Export global functions
 window.addToCart = addToCart;
 window.removeFromCart = removeFromCart;
@@ -1285,27 +1252,27 @@ async function loadPartnerStores() {
 }
 
 // block mouse right-click
-// document.addEventListener('contextmenu', e => e.preventDefault());
+ document.addEventListener('contextmenu', e => e.preventDefault());
 
-// // block common keyboard shortcuts (Ctrl/Cmd + U/S, Ctrl/Cmd+Shift+I/J/C, F12, Shift+F10, ContextMenu key)
-// document.addEventListener('keydown', function (e) {
-//     const k = (e.key || '').toLowerCase();
-//     const modifier = e.ctrlKey || e.metaKey; // include Cmd on macOS
+ // block common keyboard shortcuts (Ctrl/Cmd + U/S, Ctrl/Cmd+Shift+I/J/C, F12, Shift+F10, ContextMenu key)
+ document.addEventListener('keydown', function (e) {
+     const k = (e.key || '').toLowerCase();
+     const modifier = e.ctrlKey || e.metaKey; // include Cmd on macOS
 
-//     // F12
-//     if (k === 'f12') { e.preventDefault(); return; }
+     // F12
+    if (k === 'f12') { e.preventDefault(); return; }
 
-//     // Shift+F10 (opens context menu)
-//     if (e.shiftKey && k === 'f10') { e.preventDefault(); return; }
+     // Shift+F10 (opens context menu)
+     if (e.shiftKey && k === 'f10') { e.preventDefault(); return; }
 
-//     // ContextMenu key (some keyboards) or legacy keyCode 93
-//     if (k === 'contextmenu' || e.keyCode === 93) { e.preventDefault(); return; }
+     // ContextMenu key (some keyboards) or legacy keyCode 93
+     if (k === 'contextmenu' || e.keyCode === 93) { e.preventDefault(); return; }
 
-//     // Ctrl/Cmd + U (view source), Ctrl/Cmd + S (save)
-//     if (modifier && (k === 'u' || k === 's')) { e.preventDefault(); return; }
+     // Ctrl/Cmd + U (view source), Ctrl/Cmd + S (save)
+    if (modifier && (k === 'u' || k === 's')) { e.preventDefault(); return; }
 
-//     // Ctrl/Cmd + Shift + I/J/C (devtools / inspect / console / inspect element)
-//     if (modifier && e.shiftKey && (k === 'i' || k === 'j' || k === 'c')) { e.preventDefault(); return; }
-// });
+    // Ctrl/Cmd + Shift + I/J/C (devtools / inspect / console / inspect element)
+     if (modifier && e.shiftKey && (k === 'i' || k === 'j' || k === 'c')) { e.preventDefault(); return; }
+});
 
 // End of script.js
