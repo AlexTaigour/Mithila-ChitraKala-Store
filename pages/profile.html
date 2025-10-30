@@ -14,8 +14,40 @@
 </head>
 <body>
 
-    <h1>User Profile</h1>
-    <p>Welcome to your profile page.</p>
+    <nav class="navbar">
+        <div class="mobile-menu-overlay"></div>
+        <div class="nav-container">
+            <a href="/" class="logo" data-testid="link-home">Mithila Chitrakala</a>
+            
+            <ul class="nav-links">
+                <li><a href="/" data-testid="link-home">Home</a></li>
+                <li><a href="products.html" data-testid="link-products">Products</a></li>
+                <li><a href="#about" data-testid="link-about">About</a></li>
+                <li><a href="#contact" data-testid="link-contact">Contact</a></li>
+            </ul>
+
+            <a href="cart.html" class="cart-icon" data-testid="link-cart">
+                <i class="fa-solid fa-cart-shopping"></i> Cart
+                <span class="cart-count" data-testid="text-cart-count">0</span>
+            </a>
+            <a href="profile.html" class="nav-profile"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </nav>
+
+    <section class="profile">
+        <div class="profile-detail">
+            <div class="profile-and-username">
+            <a href="#" class="profile-img"><i class="fa-solid fa-user"></i></a>
+            <h2>@username</h2>
+            </div>
+            <div class="name-and-email">
+                <p class="h2">Name</p>
+                <p class="h4">test@gmail.com</p>
+            </div>
+        </div>
+
+        <i class="fa-solid fa-pen-to-square" id="edit-profile"></i>
+    </section>
 
      <div class="bottom-nav">
          <a href="/"><i class="fa-solid fa-house"></i><span>Home</span></a>
@@ -24,8 +56,12 @@
          <a href="#" class="active"><i class="fa-solid fa-user"></i><span>Profile</span></a>
     </div>
 
+    <section class="logout">
+        <p class="h2">LogOut</p>
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+    </section>
+
 
     <script src="script.js"></script>
 </body>
 </html>
-
