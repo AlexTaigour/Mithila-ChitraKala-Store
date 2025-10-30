@@ -2027,6 +2027,7 @@ body::-moz-selection {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
     margin-top: 1rem;
     border-radius: 10px;
     font-size: 1rem;
@@ -2049,6 +2050,12 @@ body::-moz-selection {
 .profile {
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.233);
 
+}
+
+.profile #edit-profile{
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+    margin-right: 0.3rem;
 }
 
 .profile-detail {
@@ -2084,10 +2091,14 @@ body::-moz-selection {
 
 @media (max-width: 480px) {
 
-    .profile-detail {
+.profile-detail {
     display: flex;
     flex-direction: row;
     gap: 1rem;
+}
+
+.profile #edit-profile{
+    font-size: 1rem;
 }
 
 .profile-and-username {
@@ -2107,10 +2118,6 @@ body::-moz-selection {
 
 .name-and-email .h4 {
     font-size: 0.7rem;
-}
-
-.logout {
-    font-size: 0.5rem;
 }
 
 }
