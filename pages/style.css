@@ -1945,3 +1945,172 @@ body::-moz-selection {
     height: 40px;
   }
 }
+
+.profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6rem;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.233);
+
+}
+
+.profile #edit-profile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    margin-right: 1rem;
+    border-radius: 50%;
+    transition: all 0.15s ease-in;
+}
+
+.profile #edit-profile:hover{
+    background-color: #00000031;
+}
+
+.profile-detail {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+}
+
+.profile-and-username {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.profile-img {
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 0.7rem;
+    background: var(--primary-red);
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.profile-and-username h2 {
+    font-size: 0.9rem;
+}
+
+.name-and-email {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    font-weight: 600;
+    gap: 0;
+}
+
+.name-and-email .h2 {
+    font-size: 1.5rem;
+}
+
+.name-and-email .h4 {
+    font-size: 0.8rem;
+}
+
+.logout{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: var(--primary-red);
+    color: white;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.233);
+    transition: all 0.2s ease-in-out;
+}
+
+.logout:hover {
+    background: hsl(0, 71%, 40%);
+}
+
+
+@media (max-width: 768px) {
+
+.profile {
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.233);
+
+}
+
+.profile-detail {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.profile-and-username {
+    gap: 0.3rem;
+}
+
+.profile-img {
+    font-size: 0.8rem;
+}
+
+.profile-and-username h2 {
+    font-size: 0.8rem;
+}
+    .name-and-email .h2 {
+    font-size: 1.2rem;
+}
+
+.name-and-email .h4 {
+    font-size: 0.7rem;
+}
+
+.logout {
+    font-size: 0.7rem;
+}
+
+}
+
+@media (max-width: 480px) {
+
+    .profile-detail {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.profile-and-username {
+    gap: 0.1rem;
+}
+
+.profile-img {
+    font-size: 0.8rem;
+}
+
+.profile-and-username h2 {
+    font-size: 0.6rem;
+}
+.name-and-email .h2 {
+    font-size: 1.1rem;
+}
+
+.name-and-email .h4 {
+    font-size: 0.7rem;
+}
+
+.logout {
+    font-size: 0.5rem;
+}
+
+}
