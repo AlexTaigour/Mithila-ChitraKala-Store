@@ -229,10 +229,42 @@ body::-moz-selection {
     font-weight: 600;
 }
 
+.nav-profile {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    background: var(--royal-blue);
+    color: white;
+    padding: 0.5rem 0.4rem;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1100;
+    font-size: 1.3rem;
+}
+
+.nav-profile:hover {
+    background: hsl(207, 60%, 40%);
+    transform: translateY(-2px);
+}
+
+.nav-profile i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
 
 
 /* Mobile Navbar Styles */
 @media (max-width: 900px) {
+
+    .nav-profile {
+        display: none;
+    }
 
     .bottom-nav {
         display: flex;
